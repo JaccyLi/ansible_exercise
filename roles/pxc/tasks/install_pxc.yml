@@ -1,0 +1,12 @@
+---
+#
+# A playbook for install and check percona-xtradb-cluster
+#
+- hosts: all
+  remote_user: root
+  vars_files:
+
+  tasks:
+    - name: 
+
+

@@ -1,0 +1,34 @@
+My ip address is :
+{{ ansible_default_ipv4.address }}
+Distribution :
+{{ansible_distribution}}
+Distribution major version :
+{{ansible_distribution_major_version}}
+FQDN :
+{{ansible_fqdn}}
+Hostname : 
+{{ansible_hostname}}
+Arch :
+{{ansible_machine}}
+Total mem :
+{{ansible_memtotal_mb}}
+Mem no cache free :
+{{ansible_memory_mb.nocache.free}}
+Mem no cache used :
+{{ansible_memory_mb.nocache.used}}
+Mem real total : 
+{{ansible_memory_mb.real.total}}
+Mem real free : 
+{{ansible_memory_mb.real.free}}
+Mem real used : 
+{{ansible_memory_mb.real.used}}
+Service manager : 
+{{ansible_service_mgr}}
+Processor cores : 
+{{ansible_processor_cores}}
+Processor count : 
+{{ansible_processor_count}}
+Processor threads per core : 
+{{ansible_processor_threads_per_core}}
+Pkg namager:
+{{ansible_pkg_mgr}}

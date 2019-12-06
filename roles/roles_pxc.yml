@@ -1,0 +1,6 @@
+---
+# Roles for install percona-xtradb-cluster
+- hosts: all
+
+  roles: 
+    - role: pxc

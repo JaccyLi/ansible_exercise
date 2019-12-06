@@ -1,0 +1,6 @@
+---
+binary_src_dir: /ansible/roles/mysqld/files
+install_dest_dir: /usr/local
+...
+
+     

@@ -1,0 +1,18 @@
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - name: create /data dir
+      file: path=/data state=directory
+
+    - name: generate ip
+      template: src=/ansible/self_report/self_report.j2 dest=/data/self_report.log
+      #when: ansible_interfaces == "ens33"
+    - name: clear pts/0
+      shell: clear > /dev/pts/0
+    - name: show self_report.log info
+      shell: cat /data/self_report.log > /dev/pts/0
+      #- name: show time constantly
+      #  shell: while sleep 0.42 ; do date > /dev/pts/0 ; clear > /dev/pts/0 ; done
+
+

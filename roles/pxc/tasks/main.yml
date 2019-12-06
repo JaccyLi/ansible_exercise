@@ -1,0 +1,21 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: configure percona.repo 
+      copy: src=/ansible/roles/pxc/files/percona.repo dest=/etc/yum.repo.d/
+    - name: install percona-xtradb-cluster in centos7
+      yum: name=Percona-XtraDB-Cluster-57 state=present
+      when: ansible_distribution_major_version == "7"
+      notify: check pxc install
+    - name: copy cnf file to /etc/percona-xtradb-cluster.conf.d/
+      copy: src=/ansible/roles/pxc/files/wsrep.cnf dest=/etc/percona-xtradb-cluster.conf.d/
+
+
+
+
+
+  handlers:
+    - name: check pxc install
+      shell: rpm -qi Percona-XtraDB-Cluster-57
+...
