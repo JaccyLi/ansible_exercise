@@ -3,7 +3,7 @@ Ansible_exercise
 
 - Some ansible configurations and playbooks and roles for reuse.
 
-Include roles::
+Included roles::
 
     /roles/httpd
     /roles/role_httpd.yml
