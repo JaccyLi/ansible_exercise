@@ -1,4 +1,1 @@
----
-vars:
-  - cnf_src: /ansible/roles/pxc/files/wsrep.cnf
-  - dest_cnf_dir: /etc/percona-xtradb-cluster.conf.d/
+username: daemon

@@ -1,4 +1,7 @@
 ---
-vars:
-  - cnf_src: /ansible/roles/pxc/files/wsrep.cnf
-  - dest_cnf_dir: /etc/percona-xtradb-cluster.conf.d/
+#- include: remove.yml
+- include: install.yml
+  #- include: config.yml
+- include: index.yml
+- include: service.yml
+...
