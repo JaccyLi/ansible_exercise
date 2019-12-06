@@ -1,0 +1,9 @@
+---
+- name: config file for 7
+    template: src=nginx7.conf.j2 dest=/etc/nginx/nginx.conf
+    when: ansible_distribution_major_version=="7"
+    notify: restart
+- name: config file for 8
+    template: src=nginx8.conf.j2 dest=/etc/nginx/nginx.conf
+    when: ansible_distribution_major_version=="8"
+    notify: restart

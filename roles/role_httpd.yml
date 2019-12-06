@@ -1,0 +1,6 @@
+---
+- hosts: websrvs
+  remote_user: root
+
+  roles:
+    - role: httpd
