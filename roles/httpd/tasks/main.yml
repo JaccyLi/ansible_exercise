@@ -1,7 +1,7 @@
 ---
 #- include: remove.yml
 - include: install.yml
-  #- include: config.yml
+- include: config.yml
 - include: index.yml
 - include: service.yml
 ...

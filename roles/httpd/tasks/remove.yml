@@ -1,2 +1,4 @@
 ---
-
+- name: remove httpd
+  yum: name=httpd state=absent
+...
