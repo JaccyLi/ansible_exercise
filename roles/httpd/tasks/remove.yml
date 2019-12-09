@@ -1,4 +1,12 @@
 ---
-- name: remove httpd
-  yum: name=httpd state=absent
+# remove httpd
+- hosts: websrvs
+  remote_user: root
+  tasks:
+    - name: remove httpd package
+      yum: name=httpd state=absent
+    - name: remove apache user
+      user: name=apache state=absent 
+    - name: remove data file
+      file: name=/etc/httpd  state=absent
 ...

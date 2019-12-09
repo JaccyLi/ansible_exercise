@@ -1,4 +1,4 @@
----
-vars:
-  - cnf_src: /ansible/roles/pxc/files/wsrep.cnf
-  - dest_cnf_dir: /etc/percona-xtradb-cluster.conf.d/
+- name: yum repolist
+  shell: yum clean all
+- name: restart
+  service: name=nginx state=restarted

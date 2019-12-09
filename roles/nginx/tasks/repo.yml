@@ -1,0 +1,4 @@
+- name: copy yum repo for nginx
+  copy: src=nginx.repo dest=/etc/yum.repos.d/
+  notify: yum repolist
+  tags: repo
