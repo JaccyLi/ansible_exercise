@@ -1,47 +1,12 @@
 ---
-#
-# A playbook for install mysql binary
-#
-- hosts: 172.20.1.87
-  remote_user: root
-  vars_files:
-    - /ansible/roles/mysqld/vars/mysql_vars.yml
-  
-
-  tasks:
-    - name: create mysql group
-      group: name=mysql gid=366
-      tags: group
-
-    - name: create mysql user
-      user: name=mysql uid=367 group=mysql shell=/sbin/nologin system=yes create_home=no home=/data/mysql
-
-    - name: copy mysql binary and unarchive and change file mode
-      unarchive: src={{ binary_src_dir }}/mariadb-10.2.29-linux-x86_64.tar.gz dest={{ install_dest_dir }} owner=mysql group=mysql
-
-    - name: create softlink /usr/local/mysql
-      file: src=/usr/local/mariadb-10.2.29-linux-x86_64 dest=/usr/local/mysql state=link
-
-    - name: create data directory
-      shell: chdir=/usr/local/mysql/ ./scripts/mysql_install_db --datadir=/data/mysql --user=mysql
-
-    - name: config file my.cnf
-      copy: src={{ binary_src_dir }}/my.cnf dest=/etc/my.cnf backup=yes
-
-    - name: configure service script
-      shell: /bin/cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
-
-      #- name: start service
-      #  shell: /etc/init.d/mysqld start;chkconfig --add mysqld;chkconfig mysqld on
-
-    - name: enable service
-      service: name=mysqld state=started enabled=yes
-
-    - name: run secure_mysql.sh
-      script: /ansible/roles/mysqld/files/secure_mysql.sh
-      tags: secure
-
-    - name: configure PATH variable
-      copy: content='PATH=/usr/local/mysql/bin:$PATH' dest=/etc/profile.d/mysql.sh
-      tags: path
+- include: install.yml
+- include: group.yml
+- include: user.yml
+- include: unarchive.yml
+- include: link.yml
+- include: data.yml
+- include: config.yml
+- include: service.yml
+- include: path.yml
+- include: secure.yml
 ...

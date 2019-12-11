@@ -1,0 +1,2 @@
+- name: config file
+  template: src=memcached.j2  dest=/etc/sysconfig/memcached

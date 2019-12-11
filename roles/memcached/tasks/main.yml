@@ -1,8 +1,4 @@
 ---
-- include: repo.yml
 - include: install.yml
 - include: config.yml
-  tags: config
-- include: file.yml
 - include: service.yml
-

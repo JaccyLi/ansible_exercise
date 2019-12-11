@@ -5,18 +5,21 @@ Ansible_exercise
 
 Included roles::
 
+    role_httpd.yml
     /roles/httpd
-    /roles/role_httpd.yml
-
+    
+    role_mysqld.yml
     /roles/mysqd
-    /roles/role_mysqld.yml
 
+    role_nginx.yml
     /roles/nginx
-    /roles/role_nginx.yml
 
+    role_pxc.yml
     /roles/pxc
-    /roles/role_pxc.yml
 
+    role_memcached.yml
+    /roles/memcached
+    
     /roles/self_report
     /roles/role_self_report.yml
 

@@ -1,5 +1,4 @@
 ---
-- name: config file ready
-  copy: src=httpd.conf dest=/etc/httpd/conf/httpd.conf backup=yes
+- name: config
+  template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf backup=yes
   notify: restart
-

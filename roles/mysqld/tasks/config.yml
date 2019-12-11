@@ -1,0 +1,3 @@
+- name: config my.cnf
+  copy: src=my.cnf  dest=/etc/my.cnf backup=yes
+  notify: restart

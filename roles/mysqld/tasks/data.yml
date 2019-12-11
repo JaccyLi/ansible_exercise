@@ -1,0 +1,2 @@
+- name: data dir
+  shell: chdir=/usr/local/mysql/  ./scripts/mysql_install_db --datadir=/data/mysql --user=mysql
