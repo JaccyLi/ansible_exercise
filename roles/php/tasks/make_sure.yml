@@ -1,0 +1,4 @@
+---
+- name: make sure php installed
+  shell: /app/php74/bin/php --version
+...

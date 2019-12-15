@@ -1,0 +1,20 @@
+---
+#
+# for php-7.3
+deps73: ["gcc","libxml2-devel","bzip2-devel","libmcrypt-devel"]
+
+#
+# for php-7.4
+deps74: ["gcc","libxml2-devel","bzip2-devel","libmcrypt-devel","sqlite-devel","oniguruma-devel"]
+
+php_pkg74: php-7.4.0.tar.xz
+php_pkg73: php-7.3.10.tar.xz
+php74: php-7.4.0
+php73: php-7.3.10.tar.xz
+
+# 
+# for php-7.3
+compile_opt73: "--prefix=/app/php73 --enable-mysqlnd --with-mysqli=mysqlnd --with-openssl --with-pdo-mysql=mysqlnd --enable-mbstring --with-freetype-dir --with-jpeg-dir --with-png-dir --with-zlib --with-libxml-dir=/usr --enable-xml --enable-sockets --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --enable-maintainer-zts --disable-fileinfo"
+
+# for php-7.4
+compile_opt74: "--prefix=/app/php74 --enable-mysqlnd --with-mysqli=mysqlnd --with-openssl --with-pdo-mysql=mysqlnd --enable-mbstring --with-zlib --enable-xml --enable-sockets --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --enable-maintainer-zts --disable-fileinfo"

@@ -1,0 +1,4 @@
+---
+- name: unarchive php pkg
+  unarchive: src={{ php_pkg74 }} dest=/data/
+...

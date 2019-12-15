@@ -1,0 +1,10 @@
+---
+- name: copy php.ini
+  shell: cp /data/{{ php74 }}/php.ini-production /etc/php.ini
+- name: copy php-fpm.service
+  shell: cp /data/{{ php74 }}/sapi/fpm/php-fpm.service /usr/lib/systemd/system
+- name: copy php-fpm.conf.default
+  shell: chdir=/app/php74/etc cp php-fpm.conf.default php-fpm.conf 
+- name: copy www.conf
+  shell: chdir=/app/php74/etc/php-fpm.d cp www.conf.default www.conf
+...

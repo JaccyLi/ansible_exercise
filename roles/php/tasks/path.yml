@@ -1,0 +1,6 @@
+---
+- name: config path variable
+  copy: content='PATH=/app/php74/bin:$PATH' dest=/etc/profile.d/php.sh
+- name: source /etc/profile.d/php.sh
+  shell: . /etc/profile.d/php.sh
+...

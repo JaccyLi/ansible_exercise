@@ -5,9 +5,9 @@
 - include: merge_apr.yml
 - include: compile.yml
 - include: path.yml
-- include: service.yml
 - include: index.yml
+- include: config.yml
+- include: service.yml
 
-#- include: config.yml
 #- include: remove.yml
 ...

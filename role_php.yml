@@ -1,0 +1,6 @@
+---
+- hosts: lamp7
+  remote_user: root
+  roles:
+    - role: php
+      tags: php
