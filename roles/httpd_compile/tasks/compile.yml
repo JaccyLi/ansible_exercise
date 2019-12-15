@@ -1,0 +1,7 @@
+---
+- name: run comfigure script
+  shell: chdir=/data/{{ httpd }} ./configure --prefix=/app/httpd24 {{ compile_opt }}
+- name: compile the  httpd
+  shell: chdir=/data/{{ httpd }} make -j 6 && make install
+  notify: message
+...

@@ -1,0 +1,4 @@
+---
+package_name: mariadb-10.2.27-linux-x86_64.tar.gz
+link_dir: /usr/local/mariadb-10.2.27-linux-x86_64
+...

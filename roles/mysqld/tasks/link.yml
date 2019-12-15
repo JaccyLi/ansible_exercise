@@ -1,2 +1,4 @@
+---
+# link_dir: /usr/local/mariadb-10.2.27-linux-x86_64
 - name: mkdir /usr/local/mysql 
-  file: src=/usr/local/mysql-5.6.46-linux-glibc2.12-x86_64 dest=/usr/local/mysql state=link
+  file: src={{ link_dir }} dest=/usr/local/mysql state=link

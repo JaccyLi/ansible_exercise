@@ -1,0 +1,13 @@
+---
+- include: adduser.yml
+- include: install_deps.yml
+- include: unarchive.yml
+- include: merge_apr.yml
+- include: compile.yml
+- include: path.yml
+- include: service.yml
+- include: index.yml
+
+#- include: config.yml
+#- include: remove.yml
+...

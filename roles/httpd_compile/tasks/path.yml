@@ -1,0 +1,4 @@
+---
+- name: config path variable
+  copy: content='PATH=/usr/local/mysql/bin/:/app/httpd24/bin:$PATH' dest=/etc/profile.d/httpd.sh
+...

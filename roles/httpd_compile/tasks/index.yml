@@ -1,0 +1,4 @@
+---
+- name: index
+  copy: src=index.html dest=/data/httpd24/htdocs/
+...

@@ -1,0 +1,5 @@
+---
+# {{ deps }} see ./vars/main.yml
+- name: install some deps and libs
+  yum: name={{ deps }}
+...

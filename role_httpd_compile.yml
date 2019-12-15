@@ -1,0 +1,7 @@
+---
+- hosts: lamp7
+  remote_user: root
+  roles:
+    - role: httpd_compile
+      tags: ["httpd_compile"]
+...

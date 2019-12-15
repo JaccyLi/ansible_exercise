@@ -1,3 +1,6 @@
 ---
 - name: restart
   service: name=httpd state=restarted
+- name: make
+  shell: chdir=/data/{{ httpd }} make -j 6 && make install
+...

@@ -1,0 +1,8 @@
+---
+- name: restart
+  service: name=httpd state=restarted
+- name: message
+  shell: echo "Nice everything just fine!!" > /dev/pts/*
+  #- name: make
+  #  shell: chdir=/data/{{ httpd }} make -j 6 && make install
+...

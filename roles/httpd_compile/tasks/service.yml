@@ -1,0 +1,4 @@
+---
+- name: start httpd service
+  shell: /app/httpd24/bin/apachectl start
+...

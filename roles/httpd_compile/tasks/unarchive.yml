@@ -1,0 +1,9 @@
+---
+# vars see ./vars/main.yml
+- name: unarchive apr_pkg
+  unarchive: src=/data/ansible_exercise/roles/httpd_compile/files/apr-1.7.0.tar.bz2 dest=/data/
+- name: narchive apr_util_pkg
+  unarchive: src=/data/ansible_exercise/roles/httpd_compile/files/apr-util-1.6.1.tar.bz2 dest=/data/
+- name: narchive httpd_pkg
+  unarchive: src=/data/ansible_exercise/roles/httpd_compile/files/httpd-2.4.41.tar.gz dest=/data/
+...

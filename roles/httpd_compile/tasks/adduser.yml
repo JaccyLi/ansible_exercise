@@ -1,0 +1,4 @@
+---
+- name: add apache user
+  user: name=apache groups="root,daemon" system=yes shell=/sbin/nologin createhome=no non_unique=no
+...

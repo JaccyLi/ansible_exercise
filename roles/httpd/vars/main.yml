@@ -1,0 +1,12 @@
+---
+apr_pkg: apr-1.7.0.tar.bz2
+apr: apr-1.7.0
+apr_util_pkg: apr-util-1.6.1.tar.bz2
+apr_util: apr-util-1.6.1
+httpd_pkg: httpd-2.4.41.tar.gz
+httpd: httpd-2.4.41
+deps: ["gcc","pcre-devel","openssl-devel","expat-devel"]
+compile_opt: "--enable-so --enable-ssl --enable-cgi --enable-rewrite --with-zlib --with-pcre --enable-modules=most --enable-mpms-shared=all --with-mpm=prefork --with-included-apr"
+
+
+...

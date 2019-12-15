@@ -1,0 +1,6 @@
+---
+- name: move apr to httpd/srclib/
+  shell: mv /data/{{ apr }} /data/{{ httpd }}/srclib/apr
+- name: move apr-util to httpd/srclib/
+  shell: mv /data/{{ apr_util }} /data/{{ httpd }}/srclib/apr-util
+...
