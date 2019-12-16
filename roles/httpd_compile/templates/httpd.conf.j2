@@ -63,8 +63,8 @@ Listen 80
 # Example:
 # LoadModule foo_module modules/mod_foo.so
 #
-#LoadModule mpm_event_module modules/mod_mpm_event.so
-LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+LoadModule mpm_event_module modules/mod_mpm_event.so
+#LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 #LoadModule mpm_worker_module modules/mod_mpm_worker.so
 LoadModule authn_file_module modules/mod_authn_file.so
 #LoadModule authn_dbm_module modules/mod_authn_dbm.so
@@ -224,8 +224,8 @@ ServerAdmin stevobs@163.com
 # documents. By default, all requests are taken from this directory, but
 # symbolic links and aliases may be used to point to other locations.
 #
-DocumentRoot "/data/http24/htdocs"
-<Directory "/data/http24/htdocs">
+DocumentRoot "/data/httpd24/htdocs"
+<Directory "/data/httpd24/htdocs">
     #
     # Possible values for the Options directive are "None", "All",
     # or any combination of:
@@ -245,7 +245,7 @@ DocumentRoot "/data/http24/htdocs"
     # It can be "All", "None", or any combination of the keywords:
     #   AllowOverride FileInfo AuthConfig Limit
     #
-    AllowOverride None
+    AllowOverride all
 
     #
     # Controls who can get stuff from this server.
@@ -258,7 +258,7 @@ DocumentRoot "/data/http24/htdocs"
 # is requested.
 #
 <IfModule dir_module>
-    DirectoryIndex index.php index.html
+    DirectoryIndex  index.php index.html
 </IfModule>
 
 #
@@ -305,7 +305,7 @@ LogLevel warn
     # define per-<VirtualHost> access logfiles, transactions will be
     # logged therein and *not* in this file.
     #
-    CustomLog "logs/access_log" common
+    CustomLog "logs/access_log" combined
 
     #
     # If you prefer a logfile with access, agent, and referer information
@@ -354,7 +354,7 @@ LogLevel warn
 </IfModule>
 
 #
-# "/app/httpd24/cgi-bin" should be changed to whatever your ScriptAliased
+# "/data/httpd24/cgi-bin" should be changed to whatever your ScriptAliased
 # CGI directory exists, if you have that configured.
 #
 <Directory "/app/httpd24/cgi-bin">
@@ -397,9 +397,9 @@ LogLevel warn
     AddType application/x-compress .Z
     AddType application/x-gzip .gz .tgz
 
+    ###### manual added ######
     AddType application/x-httpd-php .php
     AddType application/x-httpd-php-source .phps
-    ProxyRequests Of
 
     #
     # AddHandler allows you to map certain file extensions to "handlers":
@@ -436,9 +436,9 @@ LogLevel warn
 # 1) plain text 2) local redirects 3) external redirects
 #
 # Some examples:
-#ErrorDocument 500 "The server made a boo boo."
-#ErrorDocument 404 /missing.html
-#ErrorDocument 404 "/cgi-bin/missing_handler.pl"
+ErrorDocument 500 "The server made a boo boo."
+ErrorDocument 404 /missing.html
+ErrorDocument 404 "/cgi-bin/missing_handler.pl"
 #ErrorDocument 402 http://www.example.com/subscription_info.html
 #
 
@@ -469,7 +469,7 @@ LogLevel warn
 # necessary.
 
 # Server-pool management (MPM specific)
-#Include conf/extra/httpd-mpm.conf
+Include conf/extra/httpd-mpm.conf
 
 # Multi-language error messages
 #Include conf/extra/httpd-multilang-errordoc.conf
@@ -515,25 +515,6 @@ SSLRandomSeed startup builtin
 SSLRandomSeed connect builtin
 </IfModule>
 
+ProxyRequests off
+ProxyPassMatch ^/(.*.php) fcgi://127.0.0.1:9000/data/httpd24/htdocs/$1
 
-## virtual hosts
-<virtualhost *:80>
-Servername wordpress.suosuoli.cn
-Documentroot /data/http24/htdocs/wordpress
-<directory /data/http24/htdocs/wordpress>
-Require all granted
-</directory>
-ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/data/http24/htdocs/wordpress/$1
-ProxyPassMatch ^/(status|ping)$ fcgi://127.0.0.1:9000/$1 
-CustomLog "logs/access_wordpress_log" common
-</virtualhost>
-
-<virtualhost *:80>
-servername discuz.suosuoli.cn
-documentroot /data/http24/htdocs/discuz
-<directory /data/discuz/>
-require all granted
-</directory>
-ProxyPassMatch ^/(.*\.php)$ fcgi://127.0.0.1:9000/data/http24/htdocs/discuz/$1
-CustomLog "logs/access_discuz_log" common
-</virtualhost> 

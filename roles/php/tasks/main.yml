@@ -2,7 +2,7 @@
 - include: install_deps.yml
 - include: unarchive.yml
 - include: compile.yml
-- include: make_sure.yml
 - include: path.yml
 - include: config.yml
+- include: make_sure.yml
 ...

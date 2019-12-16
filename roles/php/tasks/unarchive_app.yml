@@ -1,0 +1,11 @@
+---
+- name: unarchive wordpress pkg
+  unarchive: src={{ wordpress_pkg53 }} dest={{ httpd_htdocs_root }}
+- name: change wordpress file folder name
+  shell: chdir={{ httpd_htdocs_root }} mv {{ wordpress53 }} wordpress
+
+- name: unzrchive Discuz pkg
+  unarchive: src={{ Discuz_pkg34 }} dest={{ httpd_htdocs_root }}
+- name: change Discuz file folder name
+  shell: chdir= {{ httpd_htdocs_root }} mv {{ Discuz34 }} forum
+...

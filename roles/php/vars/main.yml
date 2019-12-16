@@ -18,3 +18,28 @@ compile_opt73: "--prefix=/app/php73 --enable-mysqlnd --with-mysqli=mysqlnd --wit
 
 # for php-7.4
 compile_opt74: "--prefix=/app/php74 --enable-mysqlnd --with-mysqli=mysqlnd --with-openssl --with-pdo-mysql=mysqlnd --enable-mbstring --with-zlib --enable-xml --enable-sockets --with-config-file-path=/etc --with-config-file-scan-dir=/etc/php.d --enable-maintainer-zts --disable-fileinfo"
+
+# for wordpress-5.3
+wordpress_pkg53: wordpress-5.3-zh_CN.tar.gz
+wordpress53: wordpress-5.3-zh_CN
+
+# for Discuz3.4
+Discuz_pkg34: Discuz_X3.4_SC_UTF8.zip
+Discuz34: upload
+
+# for phpMyAdmin-4.9.2
+phpmyadmin_pkg49: phpMyAdmin-4.9.2-all-languages.zip
+phpmyadmin49: phpMyAdmin-4.9.2-all-languages
+
+# for poweradmin-2.1.7
+poweradmin_pkg: poweradmin-2.1.7.tgz
+poweradmin: poweradmin-2.1.7
+
+# for loganalyzer-4.1.8
+log_analyzer_pkg: loganalyzer-4.1.8.tar.gz
+log_analyzer: loganalyzer-4.1.8
+
+# httpd doc root
+httpd_www_doc_root: /var/www/html
+httpd_default_htdocs_root: /app/httpd24/htdocs
+httpd_htdocs_root: /data/httpd24/htdocs
