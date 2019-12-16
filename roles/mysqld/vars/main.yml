@@ -1,12 +1,14 @@
 ---
 # be referenced in [ unarchive_remote.yml | unarchive.yml ]
-package_name_7: mariadb-10.2.27-linux-x86_64.tar.gz
+#package_name_7: mariadb-10.2.27-linux-x86_64.tar.gz
+package_name_7: mariadb-10.2.29-linux-systemd-x86_64.tar.gz
 
 # be referenced in [ unarchive_remote.yml | unarchive.yml ]
 package_name_8: mariadb-10.2.29-linux-systemd-x86_64.tar.gz
 
 # be referenced in [ link.yml ]
-link_dir_7: /usr/local/mariadb-10.2.27-linux-x86_64
+#link_dir_7: /usr/local/mariadb-10.2.27-linux-x86_64
+link_dir_7: /usr/local/mariadb-10.2.29-linux-systemd-x86_64
 
 # be referenced in [ link.yml ]
 link_dir_8: /usr/local/mariadb-10.2.29-linux-systemd-x86_64
@@ -23,4 +25,9 @@ url_pkg_7: https://downloads.mariadb.org/interstitial/mariadb-10.2.29/bintar-lin
 url_pkg_8: https://downloads.mariadb.org/interstitial/mariadb-10.2.29/bintar-linux-systemd-x86_64/mariadb-10.2.29-linux-systemd-x86_64.tar.gz/from/http%3A//mirrors.tuna.tsinghua.edu.cn/mariadb/
 #dest_dir: 
 
+#######
+# be referenced in remove.yml
+#pkg_file_name_7: mariadb-10.2.27-linux-x86_64
+pkg_file_name_7: mariadb-10.2.29-linux-systemd-x86_64
+pkg_file_name_8: mariadb-10.2.29-linux-systemd-x86_64
 ...

@@ -1,9 +1,9 @@
 ---
 ## remove remote mysql
 - name: remove mysql on centos7
-  shell: rm -rf /data/mysql /usr/local/mysql /etc/my.cnf.d/ /etc/my.cnf /etc/profile.d/mysql.sh /etc/init.d/mysqld
+  shell: rm -rf /data/mysql /usr/local/mysql /etc/my.cnf.d/ /etc/my.cnf /etc/profile.d/mysql.sh /etc/init.d/mysqld /usr/local/{{ pkg_file_name_7 }}
   when: ansible_distribution_major_version == "7"
 - name: remove mysql on centos8
-  shell: rm -rf /data/mysql /usr/local/mysql /etc/my.cnf.d/ /etc/my.cnf /etc/profile.d/mysql.sh /usr/lib/systemd/system/mariadb.service
+  shell: rm -rf /data/mysql /usr/local/mysql /etc/my.cnf.d/ /etc/my.cnf /etc/profile.d/mysql.sh /usr/lib/systemd/system/mariadb.service /usr/local/{{ pkg_file_name_8 }}
   when: ansible_distribution_major_version == "8"
 ...

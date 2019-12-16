@@ -1,5 +1,5 @@
 ---
-- hosts: lamp8
+- hosts: lamp7
   remote_user: root
   roles:
     - role: mysqld

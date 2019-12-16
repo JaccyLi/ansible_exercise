@@ -1,2 +1,2 @@
 - name: restart
-  shell: /etc/init.d/mysqld restart
+  service: name=mysqld state=restarted

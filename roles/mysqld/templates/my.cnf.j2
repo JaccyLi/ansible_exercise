@@ -29,7 +29,8 @@ port		= 3306
 socket		= /tmp/mysql.sock
 user            =mysql
 datadir         =/data/mysql
-socket          =/tmp/mysql.sock
+log-bin         =mysql-bin
+server-id	= 1
 # Disabling symbolic-links is recommended to prevent assorted security risks
 # symbolic-links=0
 skip-external-locking
@@ -62,12 +63,10 @@ pid-file=/var/run/mysql/mysql.pid
 
 # Replication Master Server (default)
 # binary logging is required for replication
-log-bin=mysql-bin
 
 # required unique id between 1 and 2^32 - 1
 # defaults to 1 if master-host is not set
 # but will not function as a master if omitted
-server-id	= 1
 
 # Replication Slave (comment out master section to use this)
 #
