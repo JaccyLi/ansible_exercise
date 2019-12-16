@@ -1,0 +1,11 @@
+---
+# package_name: mariadb-10.2.27-linux-x86_64.tar.gz
+- name: unarchive remote pkg and file mode 
+  unarchive: src=/data/{{ package_name_7 }} dest=/usr/local/ owner=root group=root remote_src=yes
+  when: ansible_distribution == "7"
+
+# package_name: maridb-10.2.29-linux-systemd-x86_64
+- name: unarchive remote pkg and file mode 
+  unarchive: src=/data/{{ package_name_8 }} dest=/usr/local/ owner=root group=root remote_src=yes
+  when: ansible_distribution == "8"
+...

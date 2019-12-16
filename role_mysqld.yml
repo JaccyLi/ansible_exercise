@@ -1,6 +1,7 @@
 ---
-- hosts: lamp7
+- hosts: lamp8
   remote_user: root
   roles:
     - role: mysqld
       tags: ["mysql","db"]
+...

@@ -2,10 +2,10 @@
 # package_name: mariadb-10.2.27-linux-x86_64.tar.gz
 - name: copy tar to remote host and file mode 
   unarchive: src={{ package_name_7 }} dest=/usr/local/ owner=root group=root force=yes
-  when: ansible_distribution_major_version == "7"
+  when: ansible_distribution == "7"
 
 # package_name: mariadb-10.2.29-linux-systemd-x86_64.tar.gz
 - name: copy tar to remote host and file mode 
   unarchive: src={{ package_name_8 }} dest=/usr/local/ owner=root group=root force=yes
-  when: ansible_distribution_major_version == "8"
+  when: ansible_distribution == "8"
 ...

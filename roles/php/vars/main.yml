@@ -43,3 +43,4 @@ log_analyzer: loganalyzer-4.1.8
 httpd_www_doc_root: /var/www/html
 httpd_default_htdocs_root: /app/httpd24/htdocs
 httpd_htdocs_root: /data/httpd24/htdocs
+...

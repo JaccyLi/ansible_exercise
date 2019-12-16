@@ -1,0 +1,8 @@
+---
+# mysql client need this lib on centos8
+- name: install ncurses-compat-libs.x86_64 (libncurses.so.5)
+  yum: name=ncurses-compat-libs.x86_64
+  when: ansible_distribution_major_version == "8"
+- name: install libaio
+  yum: name=libaio
+...

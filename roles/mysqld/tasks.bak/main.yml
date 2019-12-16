@@ -1,0 +1,21 @@
+---
+#- include: install.yml
+#- include: group.yml
+#- include: user.yml
+#- include: install_libs.yml
+##- include: unarchive.yml
+#
+## remote pkg should be /data/{{ package_name }}
+#- include: unarchive_remote.yml
+#
+##  uncommit to download pkg from url
+##- include: download_pkg.yml
+#
+#- include: link.yml
+#- include: data.yml
+#- include: config.yml
+#- include: service.yml
+#- include: path.yml
+#- include: secure.yml
+- include: remove.yml
+...

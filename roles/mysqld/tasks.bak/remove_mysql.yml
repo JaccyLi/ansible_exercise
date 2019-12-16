@@ -1,0 +1,17 @@
+---
+# remove mysql server
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: stop mysql daemon
+      shell: /etc/init.d/mysqld stop
+    - name: delete related files
+      file: path={{ item }} state=absent
+      with_items:
+        - /usr/local/mysql
+        - /etc/init.d/mysqld
+        - /etc/profile.d/mysql.sh
+        - /etc/my.cnf
+        - /data/mysql
+    - name: delete user mysql
+      user: name=mysql state=absent remove=yes 
