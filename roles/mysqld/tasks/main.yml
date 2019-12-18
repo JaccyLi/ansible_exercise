@@ -1,8 +1,8 @@
 ---
-- include: install.yml
+- include: install_libs.yml
 - include: group.yml
 - include: user.yml
-- include: install_libs.yml
+- include: install_libs_8.yml
 #- include: unarchive.yml
 
 # remote pkg should be /data/{{ package_name }}

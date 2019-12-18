@@ -1,2 +1,0 @@
-- name: install deps libs
-  yum: name=libaio,perl-Data-Dumper,perl-Getopt-Long

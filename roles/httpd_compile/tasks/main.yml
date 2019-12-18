@@ -1,6 +1,10 @@
 ---
 - include: adduser.yml
 - include: install_deps.yml
+
+## for yum install
+#- include: install.yml
+
 - include: unarchive.yml
 - include: merge_apr.yml
 - include: compile.yml

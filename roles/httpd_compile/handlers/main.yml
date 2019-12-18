@@ -1,6 +1,6 @@
 ---
 - name: restart
-  service: name=httpd state=restarted
+  shell: /app/httpd24/bin/apachectl stop; /app/httpd24/bin/apachectl start
 - name: message
   shell: echo "Nice everything just fine!!" > /dev/pts/*
   #- name: make

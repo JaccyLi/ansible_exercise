@@ -2,3 +2,6 @@
 - name: config
   template: src=httpd.conf.j2 dest=/app/httpd24/conf/httpd.conf backup=yes
   notify: restart
+- name: source path
+  shell: . /etc/profile.d/httpd.sh
+...
