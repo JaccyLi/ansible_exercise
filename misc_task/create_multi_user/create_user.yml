@@ -1,0 +1,14 @@
+---
+- hosts: user
+  remote_user: root
+  vars:
+    - username: magedu
+    - password: "$1$FZsY2PLA$BfqjMAHdWG1xI3DnEPgPT."
+  vars_files:
+    - users.yml
+
+  tasks:
+    - name: create users
+      user: name={{ item.username }} password={{ password }}
+      with_items: "{{ users }}"
+...

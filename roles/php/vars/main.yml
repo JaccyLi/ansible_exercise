@@ -10,7 +10,7 @@ deps74: ["gcc","libxml2-devel","bzip2-devel","libmcrypt-devel","sqlite-devel","o
 php_pkg74: php-7.4.0.tar.xz
 php_pkg73: php-7.3.10.tar.xz
 php74: php-7.4.0
-php73: php-7.3.10.tar.xz
+php73: php-7.3.10
 
 # 
 # for php-7.3
